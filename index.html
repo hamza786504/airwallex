@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automatic Image Slideshow with Tailwind CSS and Glide.js</title>
+  
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  
+  <style>
+
+    .slider {
+      height: 250px;
+      position: relative;
+      overflow: hidden; /* Ensure no overflow */
+    }
+    .slider-track {
+      display: flex;
+      /* Increase width to accommodate extra slides */
+      width: calc(250px * 8); 
+      animation: scroll 20s linear infinite;
+    }
+    .slide {
+      height: 200px;
+      width: 250px;
+      display: flex;
+      align-items: center;
+    }
+    img {
+      width: 100%;
+    }
+
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-250px * 4)); /* Adjusted based on the number of visible slides */
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="slider">
+    <div class="slider-track"> <!-- Corrected class name -->
+        <!-- Add more slides for infinite effect -->
+        <div class="slide"><img src="./img/download.png" alt=""></div>
+        <div class="slide"><img src="./img/download.png" alt=""></div>
+        <div class="slide"><img src="./img/download.png" alt=""></div>
+        <div class="slide"><img src="./img/download.png" alt=""></div>
+        <div class="slide"><img src="./img/download.png" alt=""></div>
+        <div class="slide"><img src="./img/download.png" alt=""></div>
+        <div class="slide"><img src="./img/download.png" alt=""></div>
+        <div class="slide"><img src="./img/download.png" alt=""></div>
+    </div>
+</div>
+
+</body>
+</html>

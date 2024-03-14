@@ -37,7 +37,63 @@ ul {
 .count {
   display: inline-block;
 }
-
+.gallery button.active:first-child, .gallery .accordion-section.active:first-child .group{
+  background: linear-gradient(to right, #FF5541, #FF873D);
+}
+.gallery button.active:nth-child(2), .gallery .accordion-section.active:nth-child(2) .group{
+  background: linear-gradient(to right, #612FFF, #DC47BD);
+}
+.gallery button.active:last-child , .gallery .accordion-section.active:last-child .group{
+  background: linear-gradient(to right, #D300A2, #F70F6D);
+}
+.gallery .btn{
+  min-width: 200px;
+  max-width: 230px;
+  background-color: #2f3237;
+  width: 100%;
+}
+.gallery-item a , .why_us .card a , .group a{
+  position: relative;
+  display: inline-block;
+  padding: 10px 40px;
+}
+.gallery-item a{
+  position: relative;
+  display: inline-block;
+  padding: 0 !important;
+}
+.gallery-item a p, .why_us .card a p, .group a p{
+  opacity: 0;
+  transition: all linear 0.2;
+}
+.why_us .card a .icon , .group a .icon{
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  opacity: 1;
+  transform: translateY(-50%);
+  transition: all linear 0.3s;
+}
+.gallery-item a .icon{
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  opacity: 1;
+  transform: translateY(-50%);
+  transition: all linear 0.3s;
+}
+.gallery-item .bg-light_dull:hover a p , .why_us .card:hover a p , .group a:hover p{
+  opacity: 1;
+}
+.why_us .card:hover a .icon{
+  transform: translate(450%, -50%);
+}
+.gallery-item .bg-light_dull:hover a .icon{
+  transform: translate(650%, -50%);
+}
+.group a:hover .icon{
+  transform: translate(500%, -50%);
+}
 .footer{
   background-color: #f5f5f7;
 }
@@ -65,6 +121,147 @@ ul {
   transition-delay: 0s; /* Reset transition delay */
 }
 
+.business_size .owl-item .card{
+  background: radial-gradient(120.2% 118.78% at 30.96% 25%,#FFFFFF 0%,#FFFFFF 0.01%,#E7E7E7 95.26%);
+}
+.business_size .owl-item:nth-child(2) .card , .business_size .owl-item:nth-child(1) .card{
+  background: none !important;
+}
+
+.business_size .owl-stage{
+  padding-left: 20px !important;
+}
+
+.business_size .owl-item .item{
+  height: 100%;
+}
+.business_size .owl-dots button.active span{
+  background: #612fff !important;
+}
+.owl-carousel .owl-nav{
+  position:relative;
+}
+
+.business_size .business_slider .owl-nav{
+  position: absolute;
+  top: 40%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.business_size .business_slider .owl-nav button{
+  background-color: #2f3237;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+.business_size .business_slider .owl-nav button span{
+  transform: translateY(-9%);
+  color: white;
+}
+
+.business_size .business_slider .owl-nav button:hover{
+  background-color: #1F2225;
+}
+
+.trusted_image{
+  object-fit: cover;
+}
+.card_hover{
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%; width: 100%;
+  background-color: white;
+  z-index: 1;
+  padding: 20px;
+  opacity: 0;
+  transition: all linear 0.3s;
+}
+.card:hover .card_hover{
+  opacity: 1;
+}
+.card .card_hover img{
+  z-index: 1000 !important;
+}
+
+
+
+
+
+.slider {
+  position: relative;
+  overflow: hidden; /* Ensure no overflow */
+}
+.slider-track {
+  display: flex;
+  /* Increase width to accommodate extra slides */
+  width: calc(450px * 8); 
+  animation: scroll 20s linear infinite;
+}
+.slide {
+  width: 450px;
+  aspect-ratio: 3/2;
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+  margin-top: 30px;
+}
+.slider-track:hover{
+  animation-play-state: paused;
+}
+img {
+  width: 100%;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 4)); /* Adjusted based on the number of visible slides */
+  }
+}
+
+@media screen and (max-width: 992px){
+  .business_size .owl-item:first-child{
+    display: none;
+  }
+}
+
+
+
+
+
+::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent; /* Set the background color of the track */
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Set the color of the scrollbar thumb */
+  border-radius: 5px; /* Set the border radius of the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: transparent; /* Set the color of the scrollbar thumb on hover */
+}
+
+
+@media screen and (max-width: 1300px){
+  .lg:container-fluid{
+    width: 100% !important;
+  }
+}
 @media screen and (min-width: 768px) {
   .logo {
     width: 146px;
